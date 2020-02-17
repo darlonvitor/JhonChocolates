@@ -1,0 +1,3 @@
+[0203/083025:ERROR:crash_report_database_win.cc(563)] CreateDirectory C:\Program Files (x86)\reports: Acesso negado. (0x5)
+[0203/083025:ERROR:registration_protocol_win.cc(82)] TransactNamedPipe: O pipe foi finalizado. (0x6D)
+[0203/083025:ERROR:crash_report_database_win.cc(563)] CreateDirectory C:\Program Files (x86)\reports: Acesso negado. (0x5)

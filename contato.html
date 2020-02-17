@@ -1,0 +1,33 @@
+<! DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Contato</title>
+    <link rel="stylesheet" type="text/css" href="_css/formulario.css"/>
+</head>
+<body>
+    <h1>Fale conosco</h1>
+    <h3>www.jhonnchocolates.com.br / TEL: (88) 9 9745-9697</h3>
+
+    <hr/><!-- Cria linha horizontal-->
+
+    <p>Deixe-nos uma mensagem, basta preencher os campos abaixo.</p>
+
+    <form method="post" action="_php/mail_send.php" type="text/plain">
+
+        <div id="formul1">
+            <input type="text" name="nome" placeholder="Nome" size="34" maxlength="40" class="campo" required/>
+            <input type="email" name="email" placeholder="Email" size="34" maxlength="40" class="campo" required/>
+            <input type="text" name="assunto" placeholder="Assunto" size="34" maxlength="30" class="campo"/>
+        </div>
+
+        <div id="formul2">
+            <textarea name="mensagem" cols="35" rows="5" placeholder="Mensagem" class="campo" ></textarea>
+            <input type="submit" value="Enviar" id="botao"/>
+
+        </div>
+
+
+    </form>
+</body>
+</html>

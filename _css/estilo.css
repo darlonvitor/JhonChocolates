@@ -1,0 +1,314 @@
+@charset "UTF8";
+@import url(../fontes/fontes.css);
+
+
+body{
+	font-family: 'AvenirLTW01-35Light',sans-serif;
+	margin: 0;/*hip hip ... huraaaa*/
+	padding: 0;
+}
+.fundo1{
+	background: url("../_imagens/fundo1.jpg") no-repeat fixed;
+}
+.fundo2{
+	background: url("../_imagens/fundo2.jpg") no-repeat fixed;
+}
+
+.fundo3{
+	background: url("../_imagens/fundo3.jpg") no-repeat fixed;
+}
+
+/*________________________________________________________________________________________________________________*/
+/* EDITANDO O MENU DA PÁGINA*/
+
+header#cabecalho {
+	background-color: rgba(0,0,0,.6);/*cor de fundo do cabeçalho*/
+	position: fixed;/*mantem a posição do cabeçalho fixa, para ele acompanha a rolagem da página*/
+	top: 0;
+	/*margin-top:-18px;/*margem superior*/
+	height: 70px;/*altura do cabeçalho*/
+	width: 100%;/*largura do cabeçalho*/
+	z-index: 4;/*configura a profundidade do elemento*/
+}
+
+nav#menu {
+	display: block;/*exibe os linhas do menu como um bloco*/
+}
+
+nav#menu ul{
+	list-style: none;/*remove os marcadores da lista*/
+	font-size: 11pt;/*tamanho da fonte*/
+	font-family: 'AvenirLTW01-35Light';
+	position: relative; /*pesquisar sobre posição absoluta e relativa*/
+	top: 0px;/*posição vertical do bloco*/
+	left: 185px;/*posição horizontal do bloco*/
+
+}
+
+nav#menu li{
+	display: inline-block;/*faz com que um bloco seja exibido numa mesma linha*/
+	padding: 15px 40px 0px 45px;/*cima esq baixo dir*/
+}
+
+nav#menu a{
+	color: rgba(170,170,158,1);/*VER COMO FICA A REPRESENTAÇÃO EM RGB*/
+	text-decoration:none;/*remove o sublinhado*/
+	transition: color .6s;/*configura tempo para a transição, neste caso da cor, acontecer*/
+}
+
+nav#menu a:hover{/*configura o que acontece quando passamos o mouse por cima do elemento*/
+	color: #ffffff;
+}
+
+header#cabecalho img#logo1{
+	position: relative;/*pesquisar sobre posição absoluta e relativa*/
+	left: 220px;
+	top: -45px;
+}
+
+nav#redes_sociais{/*configurando imagens com os links para as redes sociais*/
+	display: block;
+	position: relative;
+	top: -75px;
+	left: 990px;
+}
+
+nav#redes_sociais a{
+	padding-right: 8px;
+}
+/*________________________________________________________________________________________________________________*/
+
+/*EDITANDO O CABEÇALHO DA PÁGINA*/
+
+header#cabecalho_artigo{
+	position: absolute;
+	top: 100px;
+	width: 100%;
+}
+
+div#cabecalho_titulos{
+	position: relative;
+	text-align: center; /*centralizando o texto*/
+}
+
+div#cabecalho_titulos h1{
+	font-family:'Playfair Display' ;/*escolhendo fonte*/
+	color: #ffffff;/*branco*/
+	font-weight: normal;/*espessura da letra, indo de normal a negrito*/
+	font-size: 80pt;
+	margin-top: 50px;
+	margin-bottom: 30px;
+}
+
+div#cabecalho_titulos h3{
+	font-weight:normal;
+	color: #ffffff;
+	font-size: 11pt;
+	letter-spacing: 6px; /*controla o espaçamento entre as letras*/
+}
+
+div#cabecalho_titulos h2{/*PEDIDOS ONLINE*/
+	font-weight: normal;
+	font-size: 15pt;
+}
+
+
+div#cabecalho_titulos a{
+	color: rgb(170,170,158);
+	text-decoration: none;
+	padding-bottom: 3px;/*aumentando o espaço entre o texto e a borda para parecer mais com o original*/
+	letter-spacing: 1px;/*aumentando um pouco o espaço entre as letras*/
+	border-bottom: 1px rgb(170,170,158) solid;/*colocando borda na parte inferior do texto*/
+}
+
+figure#logo_2 {
+	position: relative;
+	background-color: #ffffff;
+	height: 130px;
+	width: 100%;
+	margin-left:0;
+}
+
+figure#logo_2 img{
+	/*centralizando a imagem de logo grande*/
+	position: relative;
+	margin-left: -61px;
+	left: 50%;
+}
+/*________________________________________________________________________________________________________________________________________*/
+/*EDITANDO O CORPO DA PAGINA*/
+
+
+section{
+	position: absolute;/*cabeçalho e corpo terao sua posiçao dada relativamente a posiçao da seçao*/
+	width: 100%;
+}
+
+section p#citacao{/*formatando o paragrafo que possui a citação*/
+	color: #ffffff;
+	font-size:12pt;
+	margin-top: 25%;/*o texto vai ficar no centro do espaço entre os paragrafos*/
+	text-align: center;
+	line-height: 2;/*espaçamento entre linhas*/
+}
+
+section q{
+	font-size: 25pt;
+	font-family: 'Playfair Display';
+	font-style: italic;
+}
+article {
+	position: relative;/*tera sua posiçao relativa a seçao*/
+	margin-top: 650px;
+	top: 100px;
+	text-align: center;/*alinhamento do texto*/
+	background-color: #ffffff;
+	padding-top: 15px;
+	box-shadow: 0px/*deslocamento vertical*/ 0px/*deslocamento horizontal*/ 8px/*espalhamento*/ rgba(0,0,0,.3);/*cor ~> efeito de sombra*/
+	height: 820px;
+}
+
+article#servicos{
+	height: 700px;
+}
+
+article#graos{
+	margin-top: 165px;
+	height: 720px;
+}
+
+article a{
+	text-decoration: none;
+	color: #a9a9a9;
+	line-height:6;
+	-webkit-transition: color .5s;
+	-moz-transition: color .5s;
+	-ms-transition: color .5s;
+	-o-transition: color .5s;
+	transition: color .5s;
+}
+article a:hover{
+	color: #606060;
+}
+
+article p{/*editando os paragrafos presentes nas tags article*/
+	color:#756f63;
+	font-size: 11pt;
+	line-height: 2;/*espaçamento entre linhas*/
+}
+
+article h1{
+	font-family: 'Playfair Display';/*editando a fonte*/
+	color: #756f63;
+	font-size: 30pt;
+	font-weight: normal;
+	margin-bottom: 0px;
+}
+
+article h2{
+	font-family: 'Open Sans Condensed',sans-serif;/*ENCONTRAR A FONTE CORRETA*/
+	color: #756f63;
+	font-weight: normal;
+	font-size: 12pt;
+	letter-spacing: 3px; /*controla o espaçamento entre as letras*/
+}
+
+article hr{
+	margin-top: 20px;
+	margin-bottom: 50px;
+	width: 20%;
+	border-color: #dddddd;
+	border-width: 0;
+	height: 1px;
+	border-top-width: 1px;
+}
+
+/*EDITANDO OS BLOCOS DE TEXTO*/
+article div#artigo1{
+	position: relative;
+	display: block;
+	margin-top: 12%;
+	margin-left: 50%;
+	width: 418px;
+}
+
+article div#artigo2{
+	position: relative;
+	display: block;
+	float: left;
+	margin-top: 9%;
+	padding-left: 18%;
+	width: 418px;
+}
+
+article div#artigo3{
+	position: relative;
+	display: block;
+	margin-top: 19%;
+	margin-left: 45%;
+	width: 490px;
+	font-size:12pt;
+}
+
+/*EDITANDO AS IMAGENS*/
+article figure#fig1{
+	position: relative;
+	margin-left: 10%;
+	float: left;
+	margin-top: 7%;
+}
+
+article figure#fig2{
+	position: relative;
+	float: right;
+	margin-top: 7%;
+	margin-right: 10%;
+	width: 500px;
+}
+
+article figure#fig3{
+	position: relative;
+	margin-left: 10%;
+	margin-top: 6%;
+	float: left;
+	top: 5px;
+}
+
+article figure#fig2 img{/*Editando o espaço entre as imagens*/
+	padding: 8px;
+}
+
+article figure#fig3 img{/*Editando o espaço entre as imagens*/
+	padding: 8px;
+}
+/*___________________________________________________________________________________________________________________________________________*/
+
+/*EDITANDO O IFRAME DOS CONTATOS*/
+
+iframe{
+	position:absolute;
+	top: 4367px;
+	border: none;
+	overflow: hidden; /*esconde a scrollbar*/
+	height:94%;
+	width:100%;
+}
+
+/*___________________________________________________________________________________________________________________________________________*/
+/*EDITANDO O RODAPÉ*/
+
+footer{
+	background-color: rgb(117,111,99);
+	display: block;
+	position: relative;
+	top: 4950px;
+}
+
+footer p{
+	text-align: center;
+	padding: 10px 0px 10px 0px;
+	font-size: 11pt;
+	font-family: 'BrandonGrotW01-Light';
+	color: rgb(173,169,160);
+	width:100%;
+}

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8"/>
+	<title> JhonnChocolates|PEDIDOS </title>
+	<link rel="stylesheet" type="text/css" href="_css/pedidos.css"/>
+	<link rel="shortcut icon" href="_imagens/favicon.ico"/><!-- icone da aba-->
+	<link rel="stylesheet" type="text/css" href="_css/menu.css"/>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="_javascript/simpleCart.js"></script>
+	<script type="text/javascript" src="_javascript/dados.js"></script>
+	<script language="javascript">
+
+		$(window).unload(function () {
+			localStorage.clear();//limpando dados do navegador
+        });
+
+
+		$(document).ready(function() {
+            var cont = 180;
+
+            preencher(1);//tem como defaut as trufas
+
+            //Função de rolagem da tela para o topo
+			$('#subir').click(function(){
+				$('html, body').animate({scrollTop:0}, 1000);
+			});
+
+            //var itens = document.getElementsByClassName('simpleCart_shelfItem');
+
+            $(".dropdown dd ul li#trufas ").css('border-left','4px solid')
+
+
+            $(".dropdown dt a").click(function() {
+
+                $(".dropdown dd ul").toggle();
+                if(cont === 180){
+                    $('#seta').css('transform','rotate('+cont+'deg)');
+                    cont=0;
+				}else{
+                    $('#seta').css('transform','rotate('+cont+'deg)');
+					cont = 180;
+				}
+
+            });
+
+			//Adiciona a barra no item vigente do menu
+            $(".dropdown dd ul li a").click(function() {
+                $(".dropdown dd ul li#trufas ").css('border-left','none');
+                $(".dropdown dd ul li a").css('border','none');
+                $(".esconde").css('border','none');
+                $(this).css('border-left','4px solid');
+
+            });
+
+            $(".dropdown dd ul li a#ovos").click(function() {
+                $(".esconde").toggle();
+            });
+
+            $(".dropdown dd ul li#trufas").click(function () {
+                $(".esconde").hide();
+            })
+
+			/*function getSelectedValue(id) {
+			 return $("#" + id).find("dt a span.value").html();
+			 }*/
+
+            $(document).bind('click', function(e) {
+                var $clicked = $(e.target);
+                if (! $clicked.parents().hasClass("dropdown")){
+                   cartVazio();
+				}
+
+            });
+
+
+        });
+
+
+        //configurando a moeda para o REAL
+        simpleCart.currency({
+            currency:"BRL",
+			decimal:",",
+			symbol:"R$",
+		});
+
+       simpleCart({
+            cartStyle:'table',
+		});
+
+       //verificaçoes do caarinho vazio
+        simpleCart.bind( 'update' , function(){
+            cartVazio();
+        });
+
+        //Adicionando botao para inserir produtos no carrinho
+
+	</script>
+
+</head>
+
+<body id="corpo" class="desfoque">
+<header id="cabecalho">
+
+	<nav id="menu"> <!-- CONJUNTO DE LINKS-->
+		<ul>
+			<li><a href="index.html" >HOME</a></li>
+			<li><a href="#!" id="subir" style="color:#ffffff;">PEDIDOS ONLINE</a></li>
+			<li><a href="evento.html" >SEU EVENTO</a></li>
+			<li><a href="index.html#frame-spec" >CONTATO</a></li>
+		</ul>
+	</nav>
+
+	<img id="logo1" src="_imagens/logo_pequena.jpg" alt="logo da empresa" title="JhonnChocolates" width="40" height="40"/>
+
+	<nav id="redes_sociais">
+		<a href="https://www.facebook.com/jhonnchocolates/?fref=ts#" target="_blank"><img id="facebook" src="_imagens/face_pqn.png" alt="logo do facebook" title="pagina do facebook" width="20" height="20"/></a>
+		<a href="https://www.instagram.com/jhonnchocolates/" target="_blank"><img id="instagram" src="_imagens/insta_pqn.png" alt="logo do instagram" title="perfil no instagram" width="20" height="20"/></a>
+	</nav>
+
+
+</header>
+
+<div id="titulo"><h1>Pedidos Online</h1></div>
+<div id="interface">
+	<div id="frame_menu">
+		<dl id="sample" class="dropdown">
+			<dt><a href="#!"><span>Chocolates<img id="seta" src="_imagens/_botoes/seta.png"/></span></a></dt>
+			<dd>
+				<ul>
+					<li onclick="preencher(1)" id="trufas"><a href="#!">Trufas</a></li>
+					<li ><a href="#!" id="ovos">Ovos</a></li>
+					<li class="esconde" onclick="preencher(2)"><a href="#!"> 150g</a></li>
+					<li class="esconde" onclick="preencher(3)"><a href="#!"> 250g</a></li>
+					<li class="esconde" onclick="preencher(4)"><a href="#!"> 350g</a></li>
+					<li class="esconde" onclick="preencher(5)"><a href="#!"> 500g</a></li>
+					<li class="esconde" onclick="preencher(6)"><a href="#!"> 1 kg</a></li>
+
+				</ul>
+			</dd>
+		</dl>
+	</div>
+
+<section id="principal">
+
+	<article id="armario">
+		<header>
+			<h1>Chocolates</h1>
+			<hr/>
+			<h2></h2>
+			<p></p>
+		</header>
+		<ul id="produtos">
+		</ul>
+	</article>
+</section>
+
+
+<aside id="lateral">
+	<table id="carrinho">
+		<tr>
+			<td>Meu Pedido</td>
+			<td class="direita">(<span class="simpleCart_quantity"></span> itens)</td>
+		</tr>
+		<tr>
+			 <td id="sacola" colspan="2"><div id="container"><div id="itens_carrinho"></div></div></td>
+		</tr>
+		<tr>
+			<td>Subtotal</td>
+			<td class="direita"><div id="total" class="simpleCart_total"></div></td>
+		</tr>
+		<tr>
+			<td colspan="2" style="border:none;">
+				<form id="pagamento" method="post" target="pagseguro" action="https://pagseguro.uol.com.br/v2/checkout/payment.html">
+
+					<!-- Campos obrigatórios -->
+					<input name="receiverEmail" value="jhonneybritoh@gmail.com" type="hidden"/>
+					<input name="currency" value="BRL" type="hidden"/>
+					<input name="encoding" value="UTF-8" type="hidden"/>
+					<input name="shippingType" value='3' type="hidden">
+
+
+
+					<!-- submit do form (obrigatório) -->
+					<input onclick="gerarPedido()" alt="Pague com PagSeguro" name="submit"  type="image"
+						   src="https://p.simg.uol.com.br/out/pagseguro/i/botoes/pagamentos/120x53-pagar.gif"/>
+
+				</form>
+			</td>
+		</tr>
+	</table>
+
+
+
+</aside>
+</div>
+
+
+<footer> <!-- RODAPÉ-->
+	<p>©2017 por Jhonn Chocolates.</p>
+</footer>
+
+</body>
+</html>

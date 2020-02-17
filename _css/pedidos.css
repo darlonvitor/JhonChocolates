@@ -1,0 +1,382 @@
+@charset "UTF-8";
+@import url(../fontes/fontes.css);
+
+
+body{
+    background: url("../_imagens/fundo_pedidos.jpg") no-repeat fixed;
+    background-position-x: 60% ;
+    margin: 0;
+    padding: 0;
+}
+
+/* EDITANDO O MENU DA PÁGINA*/
+
+header#cabecalho {
+    background-color: rgba(0,0,0,.6);/*cor de fundo do cabeçalho*/
+    position: fixed;/*mantem a posição do cabeçalho fixa, para ele acompanha a rolagem da página*/
+    top: 0;
+    /*margin-top:-18px;/*margem superior*/
+    height: 70px;/*altura do cabeçalho*/
+    width: 100%;/*largura do cabeçalho*/
+    z-index: 4;/*configura a profundidade do elemento*/
+}
+
+nav#menu {
+    display: block;/*exibe os linhas do menu como um bloco*/
+}
+
+nav#menu ul{
+    list-style: none;/*remove os marcadores da lista*/
+    font-size: 11pt;/*tamanho da fonte*/
+    font-family: 'AvenirLTW01-35Light';
+    position: relative; /*pesquisar sobre posição absoluta e relativa*/
+    top: 0px;/*posição vertical do bloco*/
+    left: 185px;/*posição horizontal do bloco*/
+
+}
+
+nav#menu li{
+    display: inline-block;/*faz com que um bloco seja exibido numa mesma linha*/
+    padding: 15px 40px 0px 45px;/*cima esq baixo dir*/
+}
+
+nav#menu a{
+    color: rgba(170,170,158,1);/*VER COMO FICA A REPRESENTAÇÃO EM RGB*/
+    text-decoration:none;/*remove o sublinhado*/
+    transition: color .6s;/*configura tempo para a transição, neste caso da cor, acontecer*/
+}
+
+nav#menu a:hover{/*configura o que acontece quando passamos o mouse por cima do elemento*/
+    color: #ffffff;
+}
+
+header#cabecalho img#logo1{
+    position: relative;/*pesquisar sobre posição absoluta e relativa*/
+    left: 220px;
+    top: -45px;
+}
+
+nav#redes_sociais{/*configurando imagens com os links para as redes sociais*/
+    display: block;
+    position: relative;
+    top: -75px;
+    left: 990px;
+}
+
+nav#redes_sociais a{
+    padding-right: 8px;
+}
+
+
+
+div#titulo h1{
+    font-family: 'Playfair Display',sans-serif;
+    font-size: 29pt;
+    text-align: center;
+    font-weight: 400;
+    color:#ffffff;
+    margin-top: 13%;
+}
+/*_____________________________________________________________________________________________________________________________*/
+
+/*EDITANDO APRESENTAÇÃO DOS PRODUTOS*/
+div#interface{
+    width: 1002px;
+    min-height:600px;
+    margin: 10% auto 0px auto;
+}
+section{
+    display: block;
+    float: left;
+    width: 585px;
+    min-height: 600px;
+    background-color: white;
+}
+
+article#armario p{
+    color:#756f63;
+    font-size: 11pt;
+    text-align: center;
+    line-height: 2;
+}
+article#armario h1{
+    margin-bottom:0;
+    text-align: center;
+    font-size: 25pt;
+    color:rgb(78, 74, 66);
+    font-family:'Playfair Display',Serif;
+}
+
+article#armario h2{
+    font-family: "Playfair Display",Serif;
+    font-size: 20pt;
+    color: rgb(78,74,66);
+    text-align: center;
+    font-weight:400;
+}
+
+article#armario hr{
+    margin-top: 15px;
+    margin-bottom: 10px;
+    width: 50%;
+    border-color: rgba(78, 74, 66,.2);
+    border-width: 0;
+    height: 1px;
+    border-top-width: 1px;
+}
+
+ul#produtos {
+    padding: 10px;
+    overflow: hidden;
+    list-style: none;/*remove os marcadores da lista*/
+}
+
+ul#produtos li{
+    float: left;
+    width: 250px;
+    height:270px;
+    margin: 15px;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,.4) ;
+    -moz-box-shadow: 1px 1px 3px rgba(0,0,0,.4);
+    box-shadow: 1px 1px 3px rgba(0,0,0,.4);
+    transition: all .3s ;
+}
+
+ul#produtos li div{
+    position: absolute;
+    width: 250px;
+    height: 240px;
+    transition: all .3s ;
+}
+
+ul#produtos li a{
+    position: relative;
+    top:85%;
+    left:90%;
+}
+
+ul#produtos li span {
+    position: relative;
+    display: block;
+    font-family: 'AvenirLTW01-35Light', sans-serif;
+    font-size: 11pt;
+    background-color: #ffffff;
+    color: #756f63;
+    padding: 5px 30px 5px 10px;
+    top: 85%;
+    /*fazendo com que o texto que nao couber no conteiner seja transformado em reticencias*/
+    white-space: nowrap;/*é usada para descrever como os espaços em branco dentro dos elementos são manipulados*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+}
+
+.item_price{
+    color:rgba(117,111,99,.5);
+    padding: 0px;
+    padding-left:10px;
+}
+
+ul#produtos li:hover div{
+    background-color: rgba(0,0,0,.3);
+    height:150px;
+}
+
+ul#produtos li:hover span{
+    white-space: normal;
+    padding-right: 10px;
+}
+/*
+ul#produtos li#produto1{
+    background: url("../_imagens/_produtos/trufa_pacoca.jpg") no-repeat;
+    background-size: 200px 200px;
+    background-position:50% 0%;
+    background-color: white;
+}
+ul#produtos li#produto1:hover{
+    background-position-y: -90%;
+}
+
+ul#produtos li#produto2{
+    background: url("../_imagens/_produtos/trufa_chocolate_branco_nozes.jpg") no-repeat;
+    background-size: 200px 200px;
+    background-position:50% 0%;
+    background-color: white;
+}
+ul#produtos li#produto2:hover{
+    background-position-y: -90%;
+}
+
+ul#produtos li#produto3{
+    background: url("../_imagens/_produtos/trufa_caramelo_castanha.jpg") no-repeat;
+    background-size: 200px 200px;
+    background-position:50% 0%;
+    background-color: white;
+}
+ul#produtos li#produto3:hover{
+    background-position-y: -90%;
+}
+
+ul#produtos li#produto4{
+    background: url("../_imagens/_produtos/trufa_chocolate_framboesa.jpg") no-repeat;
+    background-size: 200px 200px;
+    background-position:50% 0%;
+    background-color: white;
+}
+ul#produtos li#produto4:hover{
+    background-position-y: -90%;
+}
+*/
+
+
+/*___________________________________________________________________________________________________________________________________________*/
+/*EDITANDO O ASIDE*/
+
+aside#lateral{
+    display: block;
+    border: 1px rgba(24,23,20,.3) solid;
+    background-color: #ffffff;
+    width: 265px;
+    min-height:598px;
+    float: right;
+}
+
+aside#lateral table#carrinho{
+    width:265px;
+}
+
+aside#lateral table td{
+    font-family: 'AvenirLTW01-35Light',sans-serif;
+    font-size: 10pt;
+    padding: 15px;
+    color:#756f63;
+}
+
+aside#lateral table tr td#sacola{
+    border-bottom: 2px rgba(117,111,99,.7) solid;
+    border-top: 1px rgba(117,111,99,.3) solid;
+    text-align: center;
+    font-size: 10pt;
+    color:rgba(117,111,99,.5);
+    padding-top:5px;padding-bottom: 0px;
+}
+
+aside#lateral table tr td#sacola td{
+    width: 0px;
+    margin:0;
+    padding:0px;
+}
+
+.direita{
+    text-align: right;
+}
+
+
+
+aside#lateral table tr td#sacola td.item-name{
+    padding-top:10px;
+    padding-bottom:10px;
+    position:relative;
+    float:left;
+    left:15px;
+    /*border: 1px #000000 solid;*/
+    width: 130px;
+    white-space: nowrap;/*é usada para descrever como os espaços em branco dentro dos elementos são manipulados*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+}
+
+.item-price{
+    display:none;
+}
+
+aside#lateral table tr td#sacola td.item-quantity{
+    position:relative;
+    width:20px;
+    /*border: 1px #000000 solid;*/
+    left:-150px;
+
+}
+
+aside#lateral table tr td#sacola td.item-total{
+    /*border: 1px #000000 solid;*/
+    position:relative;
+    top:-10px;
+    float:right;
+    left: -25px;
+}
+
+
+.simpleCart_decrement{
+    position:relative;
+    text-decoration: none;
+    color:rgb(117,111,99);
+    float:right;
+    left:82px;
+    top:5px;
+    font-weight: bold;
+    font-size:13pt;
+    /*border: 1px #000000 solid;*/
+
+}
+.simpleCart_increment{
+    position: relative;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13pt;
+    color:rgb(117,111,99);
+    float:right;
+    top:-10px;
+    /*border: 1px #000000 solid;*/
+    left:48px;
+}
+
+
+.simpleCart_remove{
+    /*border: 1px #000000 solid;*/
+    display: none;
+
+    text-decoration: none;
+    color:rgba(117,111,99,.5);
+}
+
+aside#lateral tr td form#pagamento{
+    position: relative;
+    margin-left: 25%;
+}
+
+div#itens_carrinho{
+    background-image: url("../_imagens/fundo_pagamento.png");
+    height: 239px;
+}
+
+/*___________________________________________________________________________________________________________________________________________*/
+/*EDITANDO O MENU*/
+div#frame_menu{
+    float: left;
+    width:150px;
+    border:none;
+    background-color:rgb(78,74,66);
+    min-height: 600px;
+
+}
+/*___________________________________________________________________________________________________________________________________________*/
+/*EDITANDO O RODAPÉ*/
+
+footer{
+    background-color: rgb(117,111,99);
+    clear: both;/*limpa a configuração feita em corpo e lateral*/
+}
+
+footer p{
+    text-align: center;
+    margin:0;
+    padding: 10px 0px 10px 0px;
+    font-size: 11pt;
+    font-family: 'BrandonGrotW01-Light';
+    color: rgb(173,169,160);
+    width:100%;
+}

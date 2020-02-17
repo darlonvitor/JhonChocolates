@@ -1,0 +1,60 @@
+<! DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8"/>
+	<title> jhonnChocolates </title>
+	<link rel="stylesheet" type="text/css" href="_css/estilo.css"/>
+	<link rel="shortcut icon" href="_imagens/favicon.ico"/><!-- icone da aba-->
+	<style type="text/css">
+		div{
+			text-align: center;
+		}
+		p#manutencao{
+			font-family:'Playfair Display',sans-serif;
+			position: absolute;
+			color: #ffffff;
+			font-size:30pt;
+			top: 300px;
+		}
+	</style>
+
+	<script language="javascript">
+        $(document).ready(function() {
+            $('#subir').click(function(){
+                $('html, body').animate({scrollTop:0}, 1000);
+            });
+        });
+	</script>
+</head>
+
+<body class="fundo1">
+	<header id="cabecalho">
+	
+		<nav id="menu"> <!-- CONJUNTO DE LINKS-->
+			<ul>
+				<li><a href="index.html">HOME</a></li>
+				<li><a href="pedidos.html">PEDIDOS ONLINE</a></li>
+				<li><a  id="subir" href="evento.html" STYLE="color:#ffffff;">SEU EVENTO</a></li>
+				<li><a href="index.html#frame-spec">CONTATO</a></li>
+			</ul>
+		</nav>
+		
+		<img id="logo1" src="_imagens/logo_pequena.jpg" alt="logo da empresa"/>
+
+		<nav id="redes_sociais">
+			<a href="https://www.facebook.com/jhonnchocolates/?fref=ts#" target="_blank"><img id="facebook" src="_imagens/face_pqn.png" alt="logo do facebook" title="pagina do facebook" width="20" height="20"/></a>
+			<a href="https://www.instagram.com/jhonnchocolates/" target="_blank"><img id="instagram" src="_imagens/insta_pqn.png" alt="logo do instagram" title="perfil no instagram" width="20" height="20"/></a>
+		</nav>
+		
+	</header>
+
+<div><p id="manutencao">Página em manutenção, estamos preparando o conteúdo.</p></div>
+
+
+	<footer> <!-- RODAPÉ-->
+		<p>©2017 por Jhonn Chocolates.</p>
+	</footer>
+
+</body>
+</html>
